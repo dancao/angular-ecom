@@ -30,4 +30,12 @@ export class MyService {
     const apiUrl = this.baseApiUrl + '/cart-items?expand=product';
     return this.http.get<any[]>(`${apiUrl}`);
   }
+
+  addProductToCart(productId: string, quantity: number): Observable<any> {
+    const apiUrl = this.baseApiUrl + '/cart-items';
+    return this.http.post<any>(`${apiUrl}`, {
+      productId,
+      quantity
+    });
+  }
 }
