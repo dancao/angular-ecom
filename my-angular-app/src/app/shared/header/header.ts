@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { MyService } from '../../services/app.service';
+import { AppUtils } from '../../utils/app-utils';
 
 @Component({
   selector: 'app-header',
@@ -10,5 +12,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.css',
 })
 export class Header {
+  private dataService = inject(MyService);
+  utils = AppUtils;
+  cartQuantity = input<number>(0);
 
+  ngOnInit() {    
+  }
 }

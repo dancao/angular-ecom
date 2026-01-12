@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CheckoutHeader } from '../../shared/checkout-header/checkout-header'
 
 @Component({
@@ -10,5 +10,4 @@ import { CheckoutHeader } from '../../shared/checkout-header/checkout-header'
   styleUrl: './checkout.css',
 })
 export class Checkout {
-
 }

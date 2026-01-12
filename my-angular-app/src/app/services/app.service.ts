@@ -25,4 +25,9 @@ export class MyService {
     const apiUrl = this.baseApiUrl + '/delivery-options';
     return this.http.get<any[]>(`${apiUrl}`);
   }
+
+  getCartItems(): Observable<any[]> {
+    const apiUrl = this.baseApiUrl + '/cart-items?expand=product';
+    return this.http.get<any[]>(`${apiUrl}`);
+  }
 }

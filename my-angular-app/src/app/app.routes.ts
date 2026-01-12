@@ -8,8 +8,8 @@ import { Tracking } from './pages/tracking/tracking';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'home', redirectTo: '' },
-  { path: 'checkout', component: Checkout },
-  { path: 'orders', component: Orders },
-  { path: 'tracking', component: Tracking },
+  { path: 'checkout', component: Checkout, title: 'Checkout | My Angular App' },
+  { path: 'orders', component: Orders, title: 'Orders | My Angular App' },
+  { path: 'tracking', component: Tracking, title: 'Tracking | My Angular App' },
   { path: '**', component: NotFound }                   // wildcard
 ];
