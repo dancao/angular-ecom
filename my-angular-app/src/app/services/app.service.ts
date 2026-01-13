@@ -3,12 +3,6 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -37,5 +31,15 @@ export class MyService {
       productId,
       quantity
     });
+  }
+
+  getOrders(): Observable<any[]> {
+    const apiUrl = this.baseApiUrl + '/orders?expand=products';
+    return this.http.get<any[]>(`${apiUrl}`);
+  }
+
+  getOrderById(orderId: string): Observable<any> {
+    const apiUrl = this.baseApiUrl + '/orders/' + orderId + '?expand=products';
+    return this.http.get<any>(`${apiUrl}`);
   }
 }
